@@ -19,6 +19,11 @@ background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
 
+table {
+font-size: 13px;
+color: #3A4644;
+}
+
 .container {
 	position: relative;
 	margin: 5 auto;
@@ -83,7 +88,7 @@ padding-bottom: 15px;
 width: 555px;
 }
 
-img {
+.stepImg {
 display: block;
 box-shadow: 1px 1px 2px 2px rgba(00, 00, 00, 0.2);
 margin: 5px 0;
@@ -140,35 +145,60 @@ box-shadow: 1px 1px 2px 2px rgba(00, 00, 00, 0.2);
 <body>
 
 <div class="container">
-<h1>WebColorsDetector</h1>
-<div class="main">
-<h2>Installation and use</h2>
-<p><span class="number">1</span> Drag the following link into your bookmarks bar: <a href="javascript:(function(){ if(typeof wcd!='undefined'){ wcd.reload(); }else{ var n=document.createElement('script');n.setAttribute('language','JavaScript'); n.setAttribute('src','https://raw.github.com/dixkom/webcolorsdetector/master/webcolorsdetector.js'); document.body.appendChild(n); } } )(); void 0;" 
-class="wcd-link">WCD</a>
-<img src="step1.png"/>
-</p>
-
-
-<p><span class="number">2</span> Open another web page.
-<img src="step2.png"/>
-</p>
-
-
-<p><span class="number">3</span> Click the bookmarklet.
-<img src="step3.png"/>
-</p>
-
-
-<p><span class="number">4</span> The WebColorsDetector opens a dialog displaying all colors used on the page
-<img src="step4.png"/></p>
-
-
-<div class="extraInfo"><b>WCD</b> is a web-tool that helps you to optimize use of colors on your website.<br/><br/>
- It is an open source tool, available to everyone <b>free</b> of charge.<br/><br/>
- <b>WCD</b> is easy to use, so you don't have to be a professional programmer to get started. The program is provided with graphic user interface.<br/><br/>
-<a href="https://github.com/dixkom/webcolorsdetector" target="blank" class="number" style="margin: 0">GitHub</a></div>
+	<h1>WebColorsDetector</h1>
+	<div class="main">
+		<h2>Installation and use</h2>
+		<p><span class="number">1</span> Drag the following link into your bookmarks bar: <a href="javascript:(function(){ if(typeof wcd!='undefined'){ wcd.reload(); }else{ var n=document.createElement('script');n.setAttribute('language','JavaScript'); n.setAttribute('src','https://raw.github.com/dixkom/webcolorsdetector/master/webcolorsdetector.js'); document.body.appendChild(n); } } )(); void 0;" 
+		class="wcd-link">WCD</a>
+		<img src="images/step1.png" class="stepImg"/>
+		</p>
+		
+		
+		<p><span class="number">2</span> Open another web page.
+		<img src="images/step2.png" class="stepImg"//>
+		</p>
+		
+		
+		<p><span class="number">3</span> Click the bookmarklet.
+		<img src="images/step3.png" class="stepImg"//>
+		</p>
+		
+		
+		<p><span class="number">4</span> The WebColorsDetector opens a dialog displaying all colors used on the page
+		<img src="images/step4.png" class="stepImg"//></p>
+		
+		
+		<div class="extraInfo">
+			<b>WCD</b> is a web-tool that helps you to optimize use of colors on your website.<br/><br/>
+			It is an open source tool, available to everyone <b>free</b> of charge.<br/><br/>
+			<b>WCD</b> is easy to use, so you don't have to be a professional programmer to get started. The program is provided with graphic user interface.<br/><br/>
+			<a href="https://github.com/dixkom/webcolorsdetector" target="blank" class="number" style="margin: 0">GitHub</a>
+		</div>
+		
+		<div>
+		<h2>Browser compatibility</h2>
+		<table width="100%">
+			<tr>
+				<td>supported browsers</td><td><b>not yet</b> supported</td>
+			</tr>
+			<tr>
+				<td><img src="images/icon_chrome.png"/>
+					<img src="images/icon_firefox.png"/>
+					<img src="images/icon_safari.png"/>
+				</td>
+				<td>
+					<img src="images/icon_opera.png"/>
+					<img src="images/icon_ie.png"/>
+				</td>
+			</tr>
+		</table>
+		
+	
+		</div>
+	</div>
 </div>
-</div>
+
+
 
 </body>
 
