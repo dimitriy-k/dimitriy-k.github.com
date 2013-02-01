@@ -40,13 +40,6 @@ box-shadow:         4px 4px 18px rgba(50, 50, 50, 1);
 
 .main {
 	padding: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-		
 	background: #fffad3;
 	 text-align: left;  
 }
@@ -88,6 +81,7 @@ padding-bottom: 15px;
 width: 555px;
 }
 
+
 .stepImg {
 display: block;
 box-shadow: 1px 1px 2px 2px rgba(00, 00, 00, 0.2);
@@ -124,6 +118,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 border-radius: 5px;
 box-shadow: 1px 1px 2px 2px rgba(00, 00, 00, 0.2);
 
+}
+
+.support {
+	width: 100%;
+	font-weight: bold;
+	border-top: 1px dotted #333;
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.support img {
+	position: relative;
+	top: 9px;
+}
+
+.supported {
+	background: #EDFCD5;
+
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;
+	
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	border-right: 1px dotted #333;
+
+}
+
+.notsupported {
+	background: #FFE7E7;
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+	
+		height: 40px;
+	line-height: 40px;
+	padding-left: 10px
 }
 
 </style>
@@ -164,7 +202,7 @@ box-shadow: 1px 1px 2px 2px rgba(00, 00, 00, 0.2);
 		</p>
 		
 		
-		<p><span class="number">4</span> The WebColorsDetector opens a dialog displaying all colors used on the page
+		<p style="border:0" ><span class="number">4</span> The WebColorsDetector opens a dialog displaying all colors used on the page
 		<img src="images/step4.png" class="stepImg"//></p>
 		
 		
@@ -174,31 +212,22 @@ box-shadow: 1px 1px 2px 2px rgba(00, 00, 00, 0.2);
 			<b>WCD</b> is easy to use, so you don't have to be a professional programmer to get started. The program is provided with graphic user interface.<br/><br/>
 			<a href="https://github.com/dixkom/webcolorsdetector" target="blank" class="number" style="margin: 0">GitHub</a>
 		</div>
-		
-		<div>
-		<h2>Browser compatibility</h2>
-		<table width="100%">
-			<tr>
-				<td>supported browsers</td><td><b>not yet</b> supported</td>
-			</tr>
-			<tr>
-				<td><img src="images/icon_chrome.png"/>
-					<img src="images/icon_firefox.png"/>
-					<img src="images/icon_safari.png"/>
-				</td>
-				<td>
-					<img src="images/icon_opera.png"/>
-					<img src="images/icon_ie.png"/>
-				</td>
-			</tr>
-		</table>
-		
-	
-		</div>
 	</div>
+	
+	<table class="support" cellspacing=0>
+		<tr>
+		<td class="supported">		Currently supported browsers: <img src="images/icon_chrome.png" />
+					<img src="images/icon_firefox.png" />
+					<img src="images/icon_safari.png" />
+		</td>
+		<td class="notsupported">
+				not yet supported: 
+					<img src="images/icon_opera.png" />
+					<img src="images/icon_ie.png" />
+		</td>
+		</tr>
+	</table>
 </div>
-
-
 
 </body>
 
