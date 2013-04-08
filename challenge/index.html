@@ -1,0 +1,93 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="style.css">
+
+
+<script type='text/javascript'>
+
+
+function log(msg){
+	if(typeof console != "undefined") 
+		console.log(msg)
+}
+
+</script>
+<script type='text/javascript' src='jquery-1.9.1.min.js'></script>
+<script type='text/javascript' src='knockout-2.2.1.js'></script>
+<script type='text/javascript' src='chatApi.js'></script>
+</head>
+
+<body>
+
+
+<div id='main'> 
+    <div class='menu'>
+       
+       <div class="selectedUser" data-bind="text: $root.selectedUser().name"></div>
+       
+       <div class="sendMessageWrap">
+			<form data-bind='submit: sendMessage'>		
+				Send to <select data-bind='options: receiversList, optionsValue: "name", value: selectedReceiver'></select>
+				<textarea class="messageToSend" data-bind='value: messageToSend, valueUpdate: "keyup"' ></textarea>
+				<button class="sendButton" data-bind='enable: canSendMessage' type='submit'>Send message</button>
+			</form>
+        </div>
+        
+        <div class="usersWrap">		
+			<p>Total <span data-bind='text: usersList().length'> </span> user(s):</p>
+			<div id="usersList">
+				<ul data-bind='foreach: usersList'>
+					<li data-bind="click: $root.loadUserMessages, text: name" /></li>
+				</ul>
+			</div>
+        </div>
+        
+        <div class="addUser">
+		   <form data-bind='submit: addUser'>
+				<label>Add user:</label>
+				<input data-bind='value: userNameToAdd, valueUpdate: "keyup", css: { invalid: !userNameToAddIsValid() }' />
+				<button data-bind='enable: canAddUserName' type='submit'>Add</button>
+			</form>
+        </div>
+        
+        <div class="hostWrap">
+		   <form data-bind='submit: changeHost'>
+				<label>Server:</label>
+				<input data-bind='value: host' />
+				<button type='submit'>Save</button>
+			</form>
+        </div>
+    </div>
+    
+    <div id='messages'>
+        <div class="messageMode">
+        	<div class="messagesUsers" data-bind='click: messagesForUser'  >Messages voor <span  data-bind="text: $root.selectedUser().name"></span></div>
+        	<div class="messagesAll"  data-bind='click: messagesForAllUsers'>All messages</div>
+        </div>
+        <div class="messagesContainer">
+        <div data-bind="foreach: messages">
+            <div class="messageWrap">
+				<div class="messageHeader">
+				  <span class="sender" data-bind="text: sender"></span><span class="receiver" data-bind="text: receiver"></span>
+				</div>
+				<div class='messageTimestamp' data-bind="dateString: timestamp, datePattern: 'dddd, MMMM dd, yyyy'"> </div>
+				<span class="messageContent" data-bind="text: content"> </span>
+            </div>
+        </div>
+        <div class="noMessages" data-bind="visible: messageLength">
+        	 <div class="messageWrap">
+				<span class="messageContent" >No messages for this user</span>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    
+      
+        
+</div>
+<script type='text/javascript' src='challenge.js'></script>
+
+</body>
+</html>

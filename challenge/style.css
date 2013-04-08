@@ -1,0 +1,258 @@
+body { font-family: arial; font-size: 14px; color: #333; background: url(bg.png)}
+
+
+button { height: 2em; }
+
+.selectedUser,
+.sendMessageWrap,
+.usersWrap,
+.addUser,
+.hostWrap{
+	margin: 3px;
+}
+
+
+#main {
+	overflow: hidden;
+	min-width: 815px;
+}
+
+.menu {
+	float: left;
+	position: relative;
+}
+
+.selectedUser {
+	color: #FFF;
+	font-size: 30px;
+	text-transform: uppercase;
+	
+	padding: 5px 10px;
+	font-weight: bold;
+	height: 45px;
+	line-height: 45px;
+	
+	background: #0291D9;
+	background: -moz-linear-gradient(top, #0291D9 0%, #017EBD) 100%);
+	background: -webkit-linear-gradient(top, #0291D9 0%, #017EBD 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0291D9', endColorstr='#017EBD',GradientType=0 );
+}
+
+.sendMessageWrap{
+	background: #FFC79B;
+	padding: 10px;
+	height: 140px;
+	position: relative;
+	
+	background: #FFC79B;
+	background: -moz-linear-gradient(top, #FFC79B 0%, #FCB37B) 100%);
+	background: -webkit-linear-gradient(top, #FFC79B 0%, #FCB37B 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFC79B', endColorstr='#FCB37B',GradientType=0 );
+}
+
+.messageToSend {
+	display: block;
+	width: 380px;
+	height: 80px;
+}
+
+.sendButton {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+
+
+
+
+.usersWrap{
+	padding: 10px;
+	
+	background: #E3ECFF;
+	background: -moz-linear-gradient(top, #E3ECFF 0%, #D8E4FE) 100%);
+	background: -webkit-linear-gradient(top, #E3ECFF 0%, #D8E4FE 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E3ECFF', endColorstr='#D8E4FE',GradientType=0 );
+}
+
+#usersList{
+	height: 235px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#usersList ul {
+	padding: 0;
+	margin: 0;
+}
+
+#usersList ul li{
+	padding: 5px 0px 5px 30px;
+	list-style: none;
+	background: url(user.png) no-repeat;
+}
+
+#usersList ul li:hover{
+	background: url(user.png) no-repeat #FFC79B;
+	cursor: pointer;
+}
+
+.addUser {
+	padding: 10px;
+	width: 380px;
+	background: #3849B2;
+	color: #FFF;
+	white-space: nowrap;
+	
+		background: #3849B2;
+	background: -moz-linear-gradient(top, #3849B2 0%, #1F31A3) 100%);
+	background: -webkit-linear-gradient(top, #3849B2 0%, #1F31A3 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3849B2', endColorstr='#1F31A3',GradientType=0 );
+}
+
+.addUser form {
+	padding: 0;
+	margin: 0;
+}
+
+.addUser input{
+	width: 265px;
+}
+
+
+.hostWrap form {
+	padding: 0;
+	margin: 0;
+}
+
+.hostWrap input{
+	width: 265px;
+	margin-left: 15px;
+}
+
+.hostWrap {
+	padding: 10px;
+	width: 380px;
+	white-space: nowrap;
+	
+	background: #E1E1E1;
+	background: -moz-linear-gradient(top, #E1E1E1 0%, #CACACA) 100%);
+	background: -webkit-linear-gradient(top, #E1E1E1 0%, #CACACA 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E1E1E1', endColorstr='#CACACA',GradientType=0 );
+}
+
+#messages {
+	margin: 0;
+	min-width: 400px;
+	position: relative;
+	overflow: hidden;
+}
+
+.messageMode {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+text-align: center;
+font-weight: bold;
+	padding-top: 3px;
+	background: #FFF;
+	line-height: 31px;
+	cursor: pointer;
+	white-space:nowrap;
+}
+
+.messagesUsers {
+	display: block;
+	float: left;
+	color: #FFF;
+
+	width: 50%;
+
+	background: #0291D9;
+	background: -moz-linear-gradient(top, #0291D9 0%, #017EBD) 100%);
+	background: -webkit-linear-gradient(top, #0291D9 0%, #017EBD 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0291D9', endColorstr='#017EBD',GradientType=0 );
+}
+
+.messagesAll {
+	width: 50%;
+	display: inline-block;
+	float: right;
+	
+	background: #E1E1E1;
+	background: -moz-linear-gradient(top, #E1E1E1 0%, #CACACA) 100%);
+	background: -webkit-linear-gradient(top, #E1E1E1 0%, #CACACA 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E1E1E1', endColorstr='#CACACA',GradientType=0 );
+}
+
+.messagesContainer{
+	height: 100%;
+	min-height: 590px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.messageWrap:first-child{
+	margin-top: 37px;
+}
+
+.messageWrap {
+	margin: 3px 0;
+	background: #F0F2FF;
+
+	background: -moz-linear-gradient(top, #F0F2FF 0%, #E3ECFF) 100%);
+	background: -webkit-linear-gradient(top, #F0F2FF 0%, #E3ECFF 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F0F2FF', endColorstr='#E3ECFF',GradientType=0 );
+	overflow: hidden;
+}
+
+
+.messageHeader{
+	font-weight: bold;
+	width: 100%;
+display: block;
+float: left;
+color: #FFF;
+line-height: 30px;
+
+	background: #FFC79B;
+	background: -moz-linear-gradient(top, #FFC79B 0%, #FCB37B) 100%);
+	background: -webkit-linear-gradient(top, #FFC79B 0%, #FCB37B 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFC79B', endColorstr='#FCB37B',GradientType=0 );
+	
+
+}
+
+.sender{
+	padding: 0 5px;
+}
+
+.receiver{
+	font-weight: bold;
+	color: #FFF;
+	float: right;
+	padding: 0 5px;
+	min-width: 150px;
+	text-align: right;
+
+	background: #0291D9;
+	background: -moz-linear-gradient(top, #0291D9 0%, #017EBD) 100%);
+	background: -webkit-linear-gradient(top, #0291D9 0%, #017EBD 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0291D9', endColorstr='#017EBD',GradientType=0 );
+	
+}
+
+.messageTimestamp {
+	text-align: right;
+	font-size: 12px;
+		color: #999;
+		padding: 3px;
+}
+
+.messageContent {
+	display: block;
+	padding: 4px;
+}
+
+
