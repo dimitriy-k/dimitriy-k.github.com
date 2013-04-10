@@ -75,7 +75,7 @@ var ChatListModel = function() {
     	 clearTimeout(this.refreshTimeout);
     	 var self = this;
     	 this.refreshTimeout = setTimeout(function () {
-    	 	//chatApi.getUsers(self.usersList,self.loadUserMessages, false);
+    	 	chatApi.getUsers(self.usersList,self.loadUserMessages, false);
     	 }, 3000);
     }.bind(this);
     
