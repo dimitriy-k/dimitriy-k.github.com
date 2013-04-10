@@ -57,14 +57,17 @@ window.chatApi = (function () {
 				}
 			);
         },
-        sendMessage: function (message,receiver, callback) {
-				var url = host+receiver;
-				$.post(url,message,function (data) { 
-						
-						//callback(data); 
-					
+        sendMessage: function (message,receiversList, callback) {
+				for (var i = 0, len = receiversList.length; i < len; i++){
+					var url = host+receiversList[i].name;
+					$.post(url,message,function (data) { 
 						}
-				);
+					);
+
+				}
+				
+				
+				
 			
 			return;
         },

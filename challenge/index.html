@@ -24,11 +24,12 @@ function log(msg){
 <div id='main'> 
     <div class='menu'>
        
-       <div class="selectedUser" data-bind="text: $root.selectedUser().name"></div>
+       <div class="selectedUser" data-bind="text: selectedUser().name"></div>
        
        <div class="sendMessageWrap">
 			<form data-bind='submit: sendMessage'>		
-				Send to <select data-bind='options: receiversList, optionsValue: "name", value: selectedReceiver'></select>
+				Send to <select data-bind='options: receiversList, optionsText: "name", value: selectedReceiver, enable: !sendToAll()'></select>
+				<input type="checkbox" data-bind="checked: sendToAll" /> all users
 				<textarea class="messageToSend" data-bind='value: messageToSend, valueUpdate: "keyup"' ></textarea>
 				<button class="sendButton" data-bind='enable: canSendMessage' type='submit'>Send message</button>
 			</form>
@@ -62,7 +63,7 @@ function log(msg){
     
     <div id='messages'>
         <div class="messageMode">
-        	<div class="messagesUsers" data-bind='click: messagesForUser'  >Messages voor <span  data-bind="text: $root.selectedUser().name"></span></div>
+        	<div class="messagesUsers" data-bind='click: messagesForUser'  >Messages voor <span  data-bind="text: selectedUser().name"></span></div>
         	<div class="messagesAll"  data-bind='click: messagesForAllUsers'>All messages</div>
         </div>
         <div class="messagesContainer">

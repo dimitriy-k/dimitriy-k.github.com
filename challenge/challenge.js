@@ -13,6 +13,7 @@ ko.bindingHandlers.dateString = {
  
 var ChatListModel = function() {
     this.selectedUser = ko.observable("");
+    this.sendToAll = ko.observable(false);
     this.host = ko.observable(host);
     this.usersList =  ko.observableArray();
     this.receiversList =  ko.observableArray([]);
@@ -38,7 +39,12 @@ var ChatListModel = function() {
         if (this.messageToSend()) {
              var message = {"timestamp": (new Date()),"sender": this.selectedUser().name,"content": this.messageToSend()}
              
-             chatApi.sendMessage(message,this.selectedReceiver(),null);
+             var receivers = [this.selectedReceiver()];
+             
+            
+             if(this.sendToAll()) receivers = this.receiversList();
+             
+             chatApi.sendMessage(message,receivers,null);
              this.messageToSend("");
         }
     };
