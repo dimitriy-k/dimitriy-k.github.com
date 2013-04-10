@@ -25,7 +25,7 @@ var ChatListModel = function() {
  	this.refreshTimeout;
  	this.resizeTimer;
  	this.messagesToLoad = 0;
- 	this.messagesMode = 0;
+ 	this.messagesMode = ko.observable(false);
  	
     this.addUser = function() {
         if (this.userNameToAdd() && this.userNameToAddIsValid()) {
@@ -64,18 +64,18 @@ var ChatListModel = function() {
     		 this.selectedUser(obj);
     	 }
 
-    	 if(this.messagesMode == 0){
-    	 	chatApi.getMessagesForUser(this.selectedUser(), this.messages);
-    	 }else if(this.messagesMode = 1){
+    	 if(this.messagesMode()){
     	 	this.messagesToLoad = this.usersList().length;
     	 	this.allMessages([]);
     	 	chatApi.getMessagesForUsers(this.usersList(), this.messagesLoaded);
+    	 }else{
+    	 	chatApi.getMessagesForUser(this.selectedUser(), this.messages);
     	 }
     	 
     	 clearTimeout(this.refreshTimeout);
     	 var self = this;
     	 this.refreshTimeout = setTimeout(function () {
-    	 	chatApi.getUsers(self.usersList,self.loadUserMessages, false);
+    	 	//chatApi.getUsers(self.usersList,self.loadUserMessages, false);
     	 }, 3000);
     }.bind(this);
     
@@ -116,7 +116,7 @@ var ChatListModel = function() {
     	$("#main").height(mainHeight);
     	
     	
-    	var usersListHeight = $(window).height() -400;
+    	var usersListHeight = $(window).height() -406;
     	if(usersListHeight < 235) usersListHeight = 235;
   		$("#usersList").height(usersListHeight);
     };
@@ -126,12 +126,16 @@ var ChatListModel = function() {
     }, this);
     
     this.messagesForUser = function(){
-    	this.messagesMode = 0;
+    	$(".currentMessageMode").removeClass("currentMessageMode");
+    	$(".messagesUsers").addClass("currentMessageMode"); 
+    	this.messagesMode(false);
     	this.loadUserMessages(this.selectedUser());
     };
     
     this.messagesForAllUsers = function(){
-    	this.messagesMode = 1;
+    	$(".currentMessageMode").removeClass("currentMessageMode");
+    	$(".messagesAll").addClass("currentMessageMode"); 
+    	this.messagesMode(true);
     	this.loadUserMessages();
     };
     

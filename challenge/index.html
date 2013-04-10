@@ -63,20 +63,24 @@ function log(msg){
     
     <div id='messages'>
         <div class="messageMode">
-        	<div class="messagesUsers" data-bind='click: messagesForUser'  >Messages voor <span  data-bind="text: selectedUser().name"></span></div>
+        	<div class="messagesUsers currentMessageMode" data-bind='click: messagesForUser'  >Messages voor <span  data-bind="text: selectedUser().name"></span></div>
         	<div class="messagesAll"  data-bind='click: messagesForAllUsers'>All messages</div>
         </div>
         <div class="messagesContainer">
-        <div data-bind="foreach: messages">
+        <div class="messagesWrap" data-bind="foreach: messages">
             <div class="messageWrap">
-				<div class="messageHeader">
-				  <span class="sender" data-bind="text: sender"></span><span class="receiver" data-bind="text: receiver"></span>
-				</div>
-				<div class='messageTimestamp' data-bind="dateString: timestamp, datePattern: 'dddd, MMMM dd, yyyy'"> </div>
-				<span class="messageContent" data-bind="text: content"> </span>
+				<div class="messageContent">
+				 <span class="sender" data-bind="text: sender"></span><div data-bind="visible: $root.messagesMode()">to<span class="receiver" data-bind="text: receiver"></span></div>
+				 <span data-bind="text: content"></span> 
+				 </div>
+				 
+				 <span class='messageTimestamp' data-bind="dateString: timestamp, datePattern: 'dddd, MMMM dd, yyyy'"></span>
+				
+				
+				
             </div>
         </div>
-        <div class="noMessages" data-bind="visible: messageLength">
+        <div class="noMessages messagesWrap" data-bind="visible: messageLength">
         	 <div class="messageWrap">
 				<span class="messageContent" >No messages for this user</span>
             </div>
