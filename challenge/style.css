@@ -38,7 +38,7 @@ border-radius: 3px;
 	
 	border: 1px solid #ccc;
 	
-	background: rgb(63,76,107);
+	background: #3b5998;
 }
 
 .sendMessageWrap{
@@ -102,11 +102,9 @@ border-radius: 3px;
 
 .addUser {
 	padding: 10px;
-	background: #3849B2;
+	background: #3b5998;
 	color: #FFF;
 	white-space: nowrap;
-	
-	background: rgb(63,76,107);
 	
 	border: 1px solid #ccc;
 

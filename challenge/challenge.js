@@ -116,7 +116,7 @@ var ChatListModel = function() {
     	$("#main").height(mainHeight);
     	
     	
-    	var usersListHeight = $(window).height() -406;
+    	var usersListHeight = $(window).height() -407;
     	if(usersListHeight < 235) usersListHeight = 235;
   		$("#usersList").height(usersListHeight);
   		
