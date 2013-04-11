@@ -110,13 +110,12 @@ var ChatListModel = function() {
     }, this);
     
     this.setBoxSize = function(){
-    	
     	var windowHeight = $(document).height();
     	var mainHeight = (windowHeight-20 > 620)? windowHeight-20 : 621;
     	$("#main").height(mainHeight);
     	
     	
-    	var usersListHeight = $(window).height() -407;
+    	var usersListHeight = $(window).height()-407;
     	if(usersListHeight < 235) usersListHeight = 235;
   		$("#usersList").height(usersListHeight);
   		

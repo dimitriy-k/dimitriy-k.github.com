@@ -39,6 +39,8 @@ border-radius: 3px;
 	border: 1px solid #ccc;
 	
 	background: #3b5998;
+	max-width: 450px;
+	word-break:hyphenate;
 }
 
 .sendMessageWrap{
@@ -49,6 +51,10 @@ border-radius: 3px;
 	
 		border: 1px solid #ccc;
 		
+}
+
+.sendMessageWrap select{
+	max-width: 200px;
 }
 
 .messageToSend {
@@ -93,6 +99,9 @@ border-radius: 3px;
 	background: url(user.png) no-repeat;
 	color: #3b5998;
 	font-weight: bold;
+	
+	max-width: 300px;
+	word-break:hyphenate;
 }
 
 #usersList ul li:hover{
